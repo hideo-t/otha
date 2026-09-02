@@ -14,14 +14,26 @@ window.SITE = {
 };
 
 /* ---- 以下は共通処理。通常は編集不要です ---- */
+// 未設定の項目に出す「準備中」。このファイルはビルドの翻訳対象外（script内のため）
+// なので、表示言語は html の lang 属性から自分で選ぶ。
+var TODO_LABEL = {
+  ja: '準備中',
+  en: 'Coming soon',
+  'zh-Hant': '準備中',
+  'zh-Hans': '筹备中',
+  ko: '준비 중'
+};
+
 document.addEventListener('DOMContentLoaded', function () {
   var S = window.SITE || {};
+  var lang = document.documentElement.lang || 'ja';
+  var todo = TODO_LABEL[lang] || TODO_LABEL.ja;
 
   // data-info="キー" の要素に値を差し込む。未設定なら「準備中」表示。
   document.querySelectorAll('[data-info]').forEach(function (el) {
     var v = S[el.dataset.info];
     if (v) { el.textContent = v; }
-    else { el.innerHTML = '<span class="todo">準備中</span>'; }
+    else { el.innerHTML = '<span class="todo">' + todo + '</span>'; }
   });
 
   // メール・電話リンク

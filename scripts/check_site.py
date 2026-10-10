@@ -48,6 +48,12 @@ for page in pages:
     robots = soup.find('meta', attrs={'name': 'robots'})
     if config.NOINDEX and (not robots or robots.get('content') != 'noindex,nofollow'):
         errors.append(f'{page}: staging robots')
+    if not config.NOINDEX and robots and 'noindex' in robots.get('content', ''):
+        errors.append(f'{page}: production still noindex')
+    canonical = soup.select_one('link[rel="canonical"]')
+    rel = page.relative_to(ROOT).as_posix().removesuffix('index.html')
+    if not canonical or canonical['href'] != config.SITE + config.BASE + '/' + rel:
+        errors.append(f'{page}: incorrect canonical')
     print(f'Checked {page.relative_to(ROOT)}')
 if errors:
     print('\n'.join(errors))

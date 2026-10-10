@@ -1,6 +1,6 @@
 # 一般社団法人 沖縄県トレーラーハウス協会
 
-2026-10-10: GitHub Pagesのカスタムドメインを `trailer-okinawa.jp` に設定し、SITE/BASE・canonical・言語リンク・画像パスを本番用に変更済み。DNS切替はユーザー操作待ち。HTTPS発行・apex/www・全言語の検証完了までは `NOINDEX=True` と `robots.txt: Disallow: /` を維持する。検証後に検索除外を解除し、robots.txtに本番sitemapを記載する。
+2026-10-10: 本番URLは https://trailer-okinawa.jp/ 。apexのGitHub Pages向けAレコード4件とwwwのCNAMEを確認し、apexの有効なHTTPS証明書・5言語・アセットを検証済み。HTTPS強制を有効化し、本番の検索除外を解除。robots.txtにsitemapを記載。wwwのHTTPS証明書は別途検証中（DNSヘルスチェックは有効、apexのみの証明書から更新待ち）。旧WordPressとDBは保持している。
 
 https://hideo-t.github.io/otha/
 
@@ -49,9 +49,9 @@ python scripts/check_site.py
 後者は原本も含む全ページの内部リンク・アンカー・画像ファイルと連絡先を検証する。
 ブラウザーでのスマートフォン表示とキーボード操作は別途確認する。
 
-### 独自ドメイン移行（未実施）
+### 独自ドメイン移行の保全記録
 
-`trailer-okinawa.jp` は既存WordPressサイトが稼働中。DNS切替前に承認を得ること。
+`trailer-okinawa.jp` はユーザーの切替指示後、GitHub Pagesへ移行。以下は切替前の記録と復旧時の注意。
 2026-10-10の読み取り確認では apex / www のAは `157.120.209.178`、
 MXは `10 mail74.onamae.ne.jp`、SPFは `v=spf1 include:_spf.onamae.ne.jp ~all`。
 ネームサーバーは `ns-rs1.gmoserver.jp` / `ns-rs2.gmoserver.jp`。移行直前に再確認する。

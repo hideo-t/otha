@@ -1,5 +1,7 @@
 # 一般社団法人 沖縄県トレーラーハウス協会
 
+2026-10-10: GitHub Pagesのカスタムドメインを `trailer-okinawa.jp` に設定し、SITE/BASE・canonical・言語リンク・画像パスを本番用に変更済み。DNS切替はユーザー操作待ち。HTTPS発行・apex/www・全言語の検証完了までは `NOINDEX=True` と `robots.txt: Disallow: /` を維持する。検証後に検索除外を解除し、robots.txtに本番sitemapを記載する。
+
 https://hideo-t.github.io/otha/
 
 

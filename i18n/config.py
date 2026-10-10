@@ -15,8 +15,8 @@ I18N = os.path.join(ROOT, "i18n")
 STRINGS = os.path.join(I18N, "strings")
 
 # ---- 公開先。ここだけ差し替える -------------------------------------------
-SITE = "https://hideo-t.github.io"
-BASE = "/otha"
+SITE = "https://trailer-okinawa.jp"
+BASE = ""
 
 # 暫定URLのうちは検索インデックスを止めておく。ここで拾われてしまうと
 # 本ドメインに移したときに評価が分散し、重複コンテンツ扱いにもなりうる。

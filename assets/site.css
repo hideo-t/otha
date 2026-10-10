@@ -234,3 +234,13 @@ footer .fmeta{font-family:var(--mono);font-size:12px;color:#8fb8c1;line-height:2
   .rule,.note,.warn{padding:20px 18px}
   .formbox,.info{padding:22px 18px}
 }
+
+/* Long translated navigation labels must wrap on narrow screens. */
+.nav .wrap{height:auto;min-height:66px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.brand{flex:1 1 240px;min-width:0}
+.brand .btxt{min-width:0;overflow-wrap:anywhere}
+.nav ul{flex-wrap:wrap}
+.info dd,.rule p{overflow-wrap:anywhere}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--sea-lite);outline-offset:4px}
+@media(max-width:680px){.nav{position:static}.navcta{white-space:normal}.brand .btxt span{font-size:9px}.steps{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}

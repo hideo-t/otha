@@ -28,7 +28,8 @@ _RE_HEAD_BLOCK = re.compile(r"\n?" + re.escape(BEG_HEAD) + ".*?" + re.escape(END
 _RE_BAR_BLOCK = re.compile(r"\n?" + re.escape(BEG_BAR) + ".*?" + re.escape(END_BAR), re.S)
 _RE_CANONICAL = re.compile(r"[ \t]*<link\b[^>]*\brel\s*=\s*[\"']canonical[\"'][^>]*>[ \t]*\n?", re.I)
 
-LD_KEYS = {"name", "alternateName", "description", "areaServed", "headline"}
+LD_KEYS = {"name", "alternateName", "description", "areaServed", "headline", "streetAddress",
+           "addressLocality", "addressRegion"}
 
 BAR_CSS = (
     ".pkw-langbar{background:#5f6127;font-size:13px;line-height:1;"

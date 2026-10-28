@@ -248,3 +248,41 @@ footer .fmeta{font-family:var(--mono);font-size:12px;color:#8fb8c1;line-height:2
 a:focus-visible,summary:focus-visible{outline:3px solid var(--sea-lite);outline-offset:4px}
 @media(max-width:680px){.nav{position:static}.navcta{white-space:normal}.brand .btxt span{font-size:9px}.steps{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+/* ---------- 新着・お知らせ ---------- */
+.news{list-style:none;margin:0;padding:0}
+.news li{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;background:#fff;
+  border:1px solid var(--line);border-radius:12px;padding:20px 24px;box-shadow:var(--shadow);margin-bottom:14px}
+.news li:last-child{margin-bottom:0}
+.news time{font-family:var(--mono);font-size:13px;color:var(--ink-dim);font-weight:700;flex:none}
+.news .tag-n{flex:none;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--sea);
+  background:var(--sea-wash);border-radius:5px;padding:3px 9px;font-weight:700}
+.news .nx{flex:1 1 320px;min-width:0}
+.news .nx p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.85}
+.news .nx p+p{margin-top:7px}
+.news .nx p strong{color:var(--ink);font-weight:800}
+.news .nx .links{margin-top:10px;font-size:14px;font-weight:700}
+.news .nx .links a{overflow-wrap:anywhere}
+
+/* ---------- 2026年版 要点リスト ---------- */
+.points{margin:0 0 30px;padding:0;list-style:none;counter-reset:p}
+.points li{counter-increment:p;position:relative;padding:15px 20px 15px 54px;background:#fff;
+  border:1px solid var(--line);border-radius:10px;margin-bottom:10px;font-size:14.5px;
+  color:var(--ink-soft);line-height:1.9;box-shadow:var(--shadow)}
+.points li:last-child{margin-bottom:0}
+.points li::before{content:counter(p);position:absolute;left:16px;top:15px;width:26px;height:26px;
+  border-radius:7px;background:var(--sea);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:12.5px;font-weight:700}
+.points li strong{color:var(--ink);font-weight:800}
+
+/* ---------- 資料ダウンロード ---------- */
+.docs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 26px}
+.docs a{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);color:var(--ink)}
+.docs a:hover{border-color:var(--sea-lite);transform:translateY(-1px);transition:.18s}
+.docs .ic{flex:none;width:42px;height:42px;border-radius:9px;background:var(--sea-wash);color:var(--sea);
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;font-weight:700}
+.docs .dx{min-width:0}
+.docs .dx b{display:block;font-size:15px;font-weight:800;line-height:1.55;overflow-wrap:anywhere}
+.docs .dx span{display:block;font-size:12.5px;color:var(--ink-dim);font-weight:400;margin-top:3px;line-height:1.7}
+@media(max-width:680px){.docs{grid-template-columns:1fr}}
